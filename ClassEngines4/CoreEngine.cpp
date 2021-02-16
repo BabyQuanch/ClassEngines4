@@ -36,7 +36,7 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 			return isRunning = false;
 		}
 	}
-
+	//test2
 	
 	timer.Start();
 	return isRunning = true;
