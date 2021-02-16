@@ -54,5 +54,5 @@ void Game1::BuildScene()
 	if (!currentScene->OnCreate()) {
 		Debug::FatalError("Scene failed to be created", "CoreEngine.cpp", __LINE__);
 		CoreEngine::GetInstance()->Exit();
-	}
+	}//test
 }
