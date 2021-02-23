@@ -28,6 +28,12 @@
     <Filter Include="Engine\Rendering\3D">
       <UniqueIdentifier>{9624b9d7-1ce3-4473-9df1-26d23f959d63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Graphics">
+      <UniqueIdentifier>{d41689f8-97ec-4990-85c3-bf71f9bb9ec4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Shaders">
+      <UniqueIdentifier>{286e6b73-6de3-4b56-b93d-ad6c7f0ef4d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CoreEngine.cpp">
@@ -62,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Engine\Rendering\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderHandler.cpp">
+      <Filter>Engine\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,5 +110,16 @@
     <ClInclude Include="GameObject.h">
       <Filter>Engine\Rendering\3D</Filter>
     </ClInclude>
+    <ClInclude Include="ShaderHandler.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ColourVertexShader.glsl">
+      <Filter>Engine\Shaders</Filter>
+    </None>
+    <None Include="ColourFragmentShader.glsl">
+      <Filter>Engine\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

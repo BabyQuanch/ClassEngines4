@@ -8,6 +8,7 @@
 #include "GameInterface.h"
 #include "Scene.h"
 #include "GameObject.h"
+#include "ShaderHandler.h"
 
 class CoreEngine
 {
