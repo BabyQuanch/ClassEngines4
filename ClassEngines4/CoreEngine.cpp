@@ -29,6 +29,7 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 	}
 	
 	ShaderHandler::GetInstance()->CreateProgram("colourShader","ColourVertexShader.glsl","ColourFragmentShader.glsl");
+	ShaderHandler::GetInstance()->CreateProgram("basicShader", "VertexShader.glsl", "FragmentShader.glsl");
 
 	if (gameInterface) {
 		

@@ -34,6 +34,12 @@
     <Filter Include="Engine\Shaders">
       <UniqueIdentifier>{286e6b73-6de3-4b56-b93d-ad6c7f0ef4d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{9d1e98fe-e281-4fab-971c-784d92c9230c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\FX">
+      <UniqueIdentifier>{0160b723-0a92-41b7-a997-c1abcd02c3b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CoreEngine.cpp">
@@ -72,8 +78,14 @@
     <ClCompile Include="ShaderHandler.cpp">
       <Filter>Engine\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="LightSource.cpp">
+      <Filter>Engine\FX</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureHandler.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,8 +128,14 @@
     <ClInclude Include="ShaderHandler.h">
       <Filter>Engine\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="LightSource.h">
+      <Filter>Engine\FX</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureHandler.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +143,12 @@
       <Filter>Engine\Shaders</Filter>
     </None>
     <None Include="ColourFragmentShader.glsl">
+      <Filter>Engine\Shaders</Filter>
+    </None>
+    <None Include="VertexShader.glsl">
+      <Filter>Engine\Shaders</Filter>
+    </None>
+    <None Include="FragmentShader.glsl">
       <Filter>Engine\Shaders</Filter>
     </None>
   </ItemGroup>
