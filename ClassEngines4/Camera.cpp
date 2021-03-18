@@ -1,5 +1,8 @@
 #include "Camera.h"
 #include "CoreEngine.h"
+
+std::vector<LightSource*> Camera::lightSources = std::vector<LightSource*>();
+
 Camera::Camera(): position(glm::vec3()), fieldOfView(0.0f), forward(glm::vec3()), up(glm::vec3()), right(glm::vec3()), worldUp(glm::vec3()), nearPlane(0.0f),
 farPlane(0.0f), pitch(0.0f), yaw(0.0f), perspective(glm::mat4()), orthographic(glm::mat4()), view(glm::mat4())
 {
@@ -26,6 +29,8 @@ farPlane(0.0f), pitch(0.0f), yaw(0.0f), perspective(glm::mat4()), orthographic(g
 
 Camera::~Camera()
 {
+
+
 }
 
 void Camera::SetPosition(glm::vec3 position_)
@@ -49,6 +54,15 @@ glm::mat4 Camera::GetView() const
 glm::vec3 Camera::GetPosition() const
 {
 	return position;
+}
+
+void Camera::AddLightSource(LightSource* lightSource_){
+	lightSources.push_back(lightSource_);
+}
+
+const std::vector <LightSource*> Camera::GetLightSource()
+{
+	return lightSources;
 }
 
 void Camera::UpdateCameraVectors()
