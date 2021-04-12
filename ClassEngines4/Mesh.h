@@ -13,21 +13,25 @@ struct Vertex {
 	glm::vec2 textureCoordinates;
 	glm::vec3 colour;
 };
+struct SubMesh {
+	std::vector<Vertex> vertexList;
+	std::vector<unsigned int> meshIndices;
+	GLuint textureID;
+};
 class Mesh
 {
 public:
-	Mesh(std::vector<Vertex>& vertexList_, GLuint shaderProgram_, GLuint textureID_);
+	Mesh(SubMesh& subMesh_, GLuint shaderProgram_);
 	~Mesh();
 
-	void Render(glm::mat4 transform_, Camera* camera_);
+	void Render(std::vector<glm::mat4>& instances_, Camera* camera_);
 
 private:
 	void GenerateBuffers();
 
 	GLuint VAO, VBO;
-	std::vector<Vertex> vertexList;
+	SubMesh subMesh;
 	GLuint shaderProgram;
-	GLuint textureID;
 	GLuint modelLoc, viewLoc, projectionLoc, textureLoc;
 	GLuint viewPos, lightPos, ambientValue, diffuseValue, specularValue, lightColour;
 };

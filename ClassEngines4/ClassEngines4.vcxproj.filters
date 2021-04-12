@@ -87,6 +87,9 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Engine\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="LoadOBJModel.cpp">
+      <Filter>Engine\Rendering\3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreEngine.h">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadOBJModel.h">
+      <Filter>Engine\Rendering\3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
