@@ -25,7 +25,7 @@ void Mesh::Render(std::vector<glm::mat4>& instances_, Camera* camera_)
 {
 	glUniform1i(textureLoc, 0);
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, subMesh.textureID);
+	glBindTexture(GL_TEXTURE_2D, subMesh.material.diffuseMap);
 
 	glUniform3fv(viewPos, 1, glm::value_ptr(camera_->GetPosition()));
 	glUniform3fv(lightPos, 1, glm::value_ptr(camera_->GetLightSource()[0]->GetPosition()));
@@ -68,9 +68,6 @@ void Mesh::GenerateBuffers()
 	//TEX COORDS
 	glEnableVertexAttribArray(2);
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, textureCoordinates));
-	//COLOUR
-	glEnableVertexAttribArray(3);
-	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, colour));
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);	

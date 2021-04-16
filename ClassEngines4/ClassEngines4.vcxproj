@@ -151,8 +151,11 @@
     <ClCompile Include="LightSource.cpp" />
     <ClCompile Include="LoadOBJModel.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MaterialHandler.cpp" />
+    <ClCompile Include="MaterialLoader.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="SceneGraph.cpp" />
     <ClCompile Include="ShaderHandler.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="TextureHandler.cpp" />
@@ -169,9 +172,12 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="LightSource.h" />
     <ClInclude Include="LoadOBJModel.h" />
+    <ClInclude Include="MaterialHandler.h" />
+    <ClInclude Include="MaterialLoader.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneGraph.h" />
     <ClInclude Include="ShaderHandler.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="TextureHandler.h" />

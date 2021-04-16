@@ -8,9 +8,11 @@
 #include "GameInterface.h"
 #include "Scene.h"
 #include "GameObject.h"
+#include "SceneGraph.h"
 #include "ShaderHandler.h"
 #include "TextureHandler.h"
-#include "Camera.h"
+#include "MaterialHandler.h"
+
 
 class CoreEngine
 {

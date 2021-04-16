@@ -1,11 +1,12 @@
 #include "GameScene.h"
 #include "GameObject.h"
-GameScene::GameScene() : shape(nullptr)
+GameScene::GameScene() : shape(nullptr), model(nullptr)
 {
 }
 
 GameScene::~GameScene()
 {
+	delete model;
 	model = nullptr;
 	delete shape;
 	shape = nullptr;
@@ -22,24 +23,28 @@ bool GameScene::OnCreate()
 	//TextureHandler::GetInstance()->CreateTexture("CheckerboardTexture", "CheckerboardTexture.png");
 
 
-	model = new Model("Models/Dice.obj", "Materials/Dice.mtl", ShaderHandler::GetInstance()->GetShader("basicShader"));
-	//SubMesh subMesh;
-	//subMesh.vertexList = vertexList;
-	//subMesh.textureID = TextureHandler::GetInstance()->GetTexture("CheckerboardTexture");
-	//model->AddMesh(new Mesh(subMesh, ShaderHandler::GetInstance()->GetShader("basicShader")));
-	////model->SetScale(glm::vec3(0.5f));
-	
-	shape = new GameObject(model);
-	shape->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+	Model* diceModel = new Model("Models/Dice.obj", "Materials/Dice.mtl", ShaderHandler::GetInstance()->GetShader("basicShader"));
+	SceneGraph::GetInstance()->AddModel(diceModel);
+	SceneGraph::GetInstance()->AddGameObject(new GameObject(diceModel, glm::vec3(-2.0f, 0.0f, -2.0f)));
+
+	Model* appleModel = new Model("Models/Apple.obj", "Materials/Apple.mtl", ShaderHandler::GetInstance()->GetShader("basicShader"));
+	SceneGraph::GetInstance()->AddModel(appleModel);
+	SceneGraph::GetInstance()->AddGameObject(new GameObject(appleModel, glm::vec3(1.5f, 0.0f, 0.0f)), "Apple");
+
+	diceModel = nullptr;
+	appleModel = nullptr;
+
+	/*shape = new GameObject(model);
+	shape->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));*/
 	return true;
 }
 
 void GameScene::Update(const float deltaTime_)
 {
-	shape->Update(deltaTime_);
+	SceneGraph::GetInstance()->Update(deltaTime_);
 }
 
 void GameScene::Render()
 {
-	shape->Render(CoreEngine::GetInstance()->GetCamera());
+	SceneGraph::GetInstance()->Render(CoreEngine::GetInstance()->GetCamera());
 }

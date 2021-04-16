@@ -3,7 +3,8 @@
 
 #include <sstream>
 #include "Mesh.h"
-#include "TextureHandler.h"
+
+#include "MaterialLoader.h"
 
 class LoadOBJModel{
 public:
@@ -16,7 +17,7 @@ public:
 private:
 	void PostProcessing();
 	void LoadModel(const std::string& filePath_);
-	void LoadMaterial(const std::string& matPath_);
+	void LoadMaterial(const std::string& matName_);
 	void LoadMaterialLibrary(const std::string& matFilePath_);
 
 	std::vector<glm::vec3> vertices;
@@ -25,7 +26,8 @@ private:
 	std::vector<unsigned int> indices, normalIndices, textureIndices;
 	std::vector<Vertex> meshVertices;
 	std::vector<SubMesh> subMesh;
-	GLuint currentTexture;
+
+	Material currentMaterial;
 };
 
 #endif // !LOADOBJMODEL_H

@@ -90,6 +90,15 @@
     <ClCompile Include="LoadOBJModel.cpp">
       <Filter>Engine\Rendering\3D</Filter>
     </ClCompile>
+    <ClCompile Include="SceneGraph.cpp">
+      <Filter>Engine\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialLoader.cpp">
+      <Filter>Engine\FX</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreEngine.h">
@@ -142,6 +151,15 @@
     </ClInclude>
     <ClInclude Include="LoadOBJModel.h">
       <Filter>Engine\Rendering\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGraph.h">
+      <Filter>Engine\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialLoader.h">
+      <Filter>Engine\FX</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialHandler.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

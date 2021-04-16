@@ -103,13 +103,11 @@ void CoreEngine::SetCamera(Camera* camera_)
 	camera = camera_;
 }
 
-void CoreEngine::Update(const float deltaTime_)
-{
+void CoreEngine::Update(const float deltaTime_){
+
 	if (gameInterface) {
 		gameInterface->Update(deltaTime_);
-		
 	}
-	
 }
 
 void CoreEngine::Render()
@@ -124,6 +122,11 @@ void CoreEngine::Render()
 
 void CoreEngine::OnDestroy()
 {
+	ShaderHandler::GetInstance()->OnDestroy();
+	TextureHandler::GetInstance()->OnDestroy();
+	MaterialHandler::GetInstance()->OnDestroy();
+	SceneGraph::GetInstance()->OnDestroy();
+
 	delete gameInterface;
 	gameInterface = nullptr;
 
