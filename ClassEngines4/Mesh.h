@@ -6,7 +6,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "Camera.h"
-#include "MaterialHandler.cpp"
+#include "MaterialHandler.h"
 
 struct Vertex {
 	glm::vec3 position;
