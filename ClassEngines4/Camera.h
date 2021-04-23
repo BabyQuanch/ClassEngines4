@@ -22,6 +22,9 @@ public:
 
 	void AddLightSource(LightSource* lightSource_);
 	const std::vector <LightSource*> GetLightSource();
+
+	void ProcessMouseMovement(glm::vec2 offset_);
+	void ProcessMouseZoom(int y_);
 private:
 	void UpdateCameraVectors();
 	glm::vec3 position;

@@ -7,6 +7,8 @@
 #include "Debug.h"
 #include "GameInterface.h"
 #include "Scene.h"
+#include "Camera.h"
+#include "EventListener.h"
 #include "GameObject.h"
 #include "SceneGraph.h"
 #include "ShaderHandler.h"
@@ -38,6 +40,11 @@ public:
 	void SetGameInterface(GameInterface* gameInterface_);
 	void SetCurrentScene(int sceneNum_);
 	void SetCamera(Camera* camera_);
+
+	void NotifyOfMousePressed(glm::ivec2 mouse_, int buttonType_);
+	void NotifyOfMouseReleased(glm::ivec2 mouse_, int buttonType_);
+	void NotifyOfMouseMoved(glm::ivec2 mouse_);
+	void NotifyOfMouseScrolled(int y_);
 private:
 
 	CoreEngine();

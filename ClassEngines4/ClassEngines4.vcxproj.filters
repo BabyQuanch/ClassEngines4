@@ -40,6 +40,12 @@
     <Filter Include="Engine\FX">
       <UniqueIdentifier>{0160b723-0a92-41b7-a997-c1abcd02c3b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Events">
+      <UniqueIdentifier>{571a200e-ada0-4b43-995c-e23fd0a34ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Math">
+      <UniqueIdentifier>{d93375ed-c9da-44d6-9fc0-aca01a0a3151}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CoreEngine.cpp">
@@ -97,7 +103,13 @@
       <Filter>Engine\FX</Filter>
     </ClCompile>
     <ClCompile Include="MaterialHandler.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\FX</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseEventListener.cpp">
+      <Filter>Engine\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventListener.cpp">
+      <Filter>Engine\Events</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +171,16 @@
       <Filter>Engine\FX</Filter>
     </ClInclude>
     <ClInclude Include="MaterialHandler.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\FX</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEventListener.h">
+      <Filter>Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListener.h">
+      <Filter>Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingBox.h">
+      <Filter>Engine\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -145,6 +145,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CoreEngine.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="EventListener.cpp" />
     <ClCompile Include="Game1.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="MaterialLoader.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="MouseEventListener.cpp" />
     <ClCompile Include="SceneGraph.cpp" />
     <ClCompile Include="ShaderHandler.cpp" />
     <ClCompile Include="StartScene.cpp" />
@@ -163,9 +165,11 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CoreEngine.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="EventListener.h" />
     <ClInclude Include="Game1.h" />
     <ClInclude Include="GameInterface.h" />
     <ClInclude Include="GameObject.h" />
@@ -176,6 +180,7 @@
     <ClInclude Include="MaterialLoader.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="MouseEventListener.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGraph.h" />
     <ClInclude Include="ShaderHandler.h" />
