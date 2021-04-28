@@ -143,6 +143,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CollisionDetection.cpp" />
+    <ClCompile Include="CollisionHandler.cpp" />
     <ClCompile Include="CoreEngine.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="EventListener.cpp" />
@@ -167,6 +169,8 @@
   <ItemGroup>
     <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CollisionDetection.h" />
+    <ClInclude Include="CollisionHandler.h" />
     <ClInclude Include="CoreEngine.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="EventListener.h" />
@@ -181,6 +185,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MouseEventListener.h" />
+    <ClInclude Include="Ray.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGraph.h" />
     <ClInclude Include="ShaderHandler.h" />

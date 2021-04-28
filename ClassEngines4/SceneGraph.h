@@ -6,7 +6,7 @@
 #include <map>
 #include <vector>
 #include "GameObject.h"
-
+#include "CollisionHandler.h"
 class SceneGraph
 {
 public:

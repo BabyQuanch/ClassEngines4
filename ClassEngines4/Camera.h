@@ -19,6 +19,8 @@ public:
 	glm::mat4 GetPerspective() const;
 	glm::mat4 GetOrthographic() const;
 	glm::vec3 GetPosition() const;
+	float GetNearPlane() const;
+	float GetFarPlane() const;
 
 	void AddLightSource(LightSource* lightSource_);
 	const std::vector <LightSource*> GetLightSource();

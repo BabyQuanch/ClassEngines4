@@ -111,6 +111,9 @@
     <ClCompile Include="EventListener.cpp">
       <Filter>Engine\Events</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionDetection.cpp">
+      <Filter>Engine\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreEngine.h">
@@ -180,6 +183,12 @@
       <Filter>Engine\Events</Filter>
     </ClInclude>
     <ClInclude Include="BoundingBox.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetection.h">
       <Filter>Engine\Math</Filter>
     </ClInclude>
   </ItemGroup>
