@@ -4,6 +4,8 @@
 #include "Ray.h"
 #include "GameObject.h"
 #include "CoreEngine.h"
+#include "OctSpatialPartition.h"
+
 class CollisionHandler
 {
 public:
@@ -14,7 +16,7 @@ public:
 
 	static CollisionHandler* GetInstance();
 
-	void OnCreate();
+	void OnCreate(float worldSize_);
 	void AddGameObject(GameObject* gameObject_);
 	void MouseUpdate(glm::vec2 mousePosition_, int buttonType_);
 	void OnDestroy();
@@ -25,8 +27,10 @@ private:
 	static std::unique_ptr<CollisionHandler> collisionInstance;
 	friend std::default_delete<CollisionHandler>;
 
-	static std::vector<GameObject*> colliders;
+
 	static std::vector<GameObject*> prevCollisions;
+	static OctSpatialPartition* scenePartition;
+
 };
 
 #endif // !COLLLISIONHANDLER_H

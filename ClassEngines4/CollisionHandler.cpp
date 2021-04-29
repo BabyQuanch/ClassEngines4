@@ -2,10 +2,10 @@
 
 std::unique_ptr<CollisionHandler> CollisionHandler::collisionInstance = nullptr;
 std::vector<GameObject*> CollisionHandler::prevCollisions = std::vector<GameObject*>();
-std::vector<GameObject*> CollisionHandler::colliders = std::vector<GameObject*>();
+OctSpatialPartition* CollisionHandler::scenePartition = nullptr;
 CollisionHandler::CollisionHandler()
 {
-    colliders.reserve(10);
+    
     prevCollisions.reserve(10);
 }
 
@@ -22,15 +22,16 @@ CollisionHandler* CollisionHandler::GetInstance()
     return collisionInstance.get();
 }
 
-void CollisionHandler::OnCreate()
+void CollisionHandler::OnCreate(float worldSize_)
 {
-   colliders.clear();
+   scenePartition = new OctSpatialPartition(worldSize_);
    prevCollisions.clear();
 }
 
 void CollisionHandler::AddGameObject(GameObject* gameObject_)
 {
-    colliders.push_back(gameObject_);
+    scenePartition->AddGameObject(gameObject_);
+
 }
 
 void CollisionHandler::MouseUpdate(glm::vec2 mousePosition_, int buttonType_)
@@ -39,39 +40,32 @@ void CollisionHandler::MouseUpdate(glm::vec2 mousePosition_, int buttonType_)
                                                         CoreEngine::GetInstance()->GetScreenWidth(),
                                                         CoreEngine::GetInstance()->GetScreenHeight(),
                                                         CoreEngine::GetInstance()->GetCamera());
+    if (scenePartition != nullptr) {
+        GameObject* hitResult = scenePartition->GetCollision(mouseRay);
 
-    GameObject* hitResult = nullptr;
-    float shortestDistance = 1000000.0f;
-    for (auto g : colliders) {
-        BoundingBox a = g->GetBoundingBox();
-        if (mouseRay.IsColliding(&a)) {
-            if (mouseRay.intersectDist < shortestDistance) {
-                hitResult = g;
-                shortestDistance = mouseRay.intersectDist;
+        if (hitResult) {
+            hitResult->SetHit(true, buttonType_);
+        }
+
+
+
+        for (auto c : prevCollisions) {
+            if (hitResult != c && c != nullptr) {
+                c->SetHit(false, buttonType_);
             }
+            c = nullptr;
         }
-    }
-    if (hitResult) {
-        hitResult->SetHit(true, buttonType_);
-    }
-
-    for (auto c : prevCollisions) {
-        if (hitResult != c && c != nullptr) {
-            c->SetHit(false, buttonType_);
+        prevCollisions.clear();
+        if (hitResult) {
+            prevCollisions.push_back(hitResult);
         }
-    }
-    prevCollisions.clear();
-    if (hitResult) {
-        prevCollisions.push_back(hitResult);
     }
 }
 
 void CollisionHandler::OnDestroy()
 {
-    for (auto entry : colliders) {
-        entry = nullptr;
-    }
-    colliders.clear();
+    delete scenePartition;
+    scenePartition = nullptr;
 
     for (auto entry : prevCollisions) {
         entry = nullptr;

@@ -159,6 +159,7 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="MouseEventListener.cpp" />
+    <ClCompile Include="OctSpatialPartition.cpp" />
     <ClCompile Include="SceneGraph.cpp" />
     <ClCompile Include="ShaderHandler.cpp" />
     <ClCompile Include="StartScene.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MouseEventListener.h" />
+    <ClInclude Include="OctSpatialPartition.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGraph.h" />
